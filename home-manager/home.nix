@@ -1,0 +1,85 @@
+{ inputs, outputs, config, pkgs, ... }:
+
+{
+  imports = [ 
+    # use modules from your own flake exports (from modules/home-manager):
+    outputs.homeManagerModules
+  ];
+
+  home.file = {};
+  home.username = "astro";
+  home.homeDirectory = "/home/astro";
+  home.sessionVariables = {
+    EDITOR = "nvim";
+    TERMINAL = "kitty";
+    XCURSOR_THEME = "Bibata-Modern-Classic";
+  }; 
+
+
+  home.packages = with pkgs; [
+    gotop
+    brightnessctl
+    brave
+    htop
+    tree
+    cava
+    dunst
+    feh
+    pavucontrol
+    hyprpaper
+    tldr
+    kdePackages.dolphin
+  ];
+
+
+  home.pointerCursor = {
+    package = pkgs.bibata-cursors;
+    name = "Bibata-Modern-Classic";
+    size = 22;
+  };
+
+
+  gtk = {
+    enable = true;
+    
+    theme.name = "Tokyonight-Dark-BL";
+    theme.package = pkgs.tokyo-night-gtk;
+   
+    font.name = "JetBrainsMono 10";
+    font.size = 12;
+      
+    iconTheme.name = "Papirus-Dark";
+    iconTheme.package = pkgs.papirus-icon-theme;
+  
+    cursorTheme.name = "Bibata-Modern-Classic";
+    cursorTheme.size = 26;
+    cursorTheme.package = pkgs.bibata-cursors;
+  
+    gtk3.extraConfig = {
+      gtk-button-images = 1;
+      gtk-menu-images = 1;
+      gtk-enable-event-sounds = 1;
+      gtk-enable-input-feedback-sounds = 1;
+      gtk-xft-antialias= 1 ;
+      gtk-xft-hinting = 1;
+      gtk-xft-hintstyle = "hintfull";  
+      gtk-cursor-blink = true;
+      gtk-recent-files-limit = 20;
+      gtk-application-prefer-dark-theme=1;
+    };
+  	
+    gtk3.extraCss = "
+      VteTerminal, vte-terminal {
+        padding: 13px;
+      }	 
+    ";
+  };
+
+  services.udiskie.enable = true;
+  services.udiskie.automount = true;
+  services.udiskie.notify = true;
+  services.udiskie.tray = "auto";
+
+  home.stateVersion = "24.11"; 
+  programs.home-manager.enable = true;
+}
