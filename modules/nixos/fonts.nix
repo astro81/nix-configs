@@ -11,7 +11,6 @@
       antialias = true;
       defaultFonts = {
         monospace = [ "JetBrainsMono" ];
-        cantarell = [ "Cantarell" ];
       };
     };  
   };  
