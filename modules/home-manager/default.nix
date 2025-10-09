@@ -6,6 +6,7 @@
     ./fish.nix
     ./git.nix
     ./kitty.nix
+    ./rofi.nix
     ./starship.nix
     ./tmux.nix
   ];
