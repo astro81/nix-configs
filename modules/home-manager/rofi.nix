@@ -1,15 +1,24 @@
 { pkgs, ... }:
 
-#let 
+let
+  # URL of your Rofi background image
+  #rofiBgUrl = "https://example.com/rofi-bg.png";
+
+  # Fetch the image during build
+  #rofiBg = pkgs.fetchurl {
+  #  url = rofiBgUrl;
+  #  sha256 = ""; # replace with real hash
+  #};
+
   # Fetch the image from your GitHub repository
-#  rofiBg = pkgs.fetchFromGitHub {
-#    owner = "astro81"; # replace with your GitHub username
-#    repo = "nix-configs";          # repo name
-#    rev = "main";                   # branch or commit
-#    sha256 = "sha256-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA="; 
-#    fetchSubmodules = false;
-#  } + "/assets/rofi/rofi-bg.png";
-#in
+  rofiBg = pkgs.fetchFromGitHub {
+    owner = "astro81"; 
+    repo = "nix-configs";          
+    rev = "6e2499224b5a6f9eed498fa2492527dda1706cab";                   
+    sha256 = "sha256-gFyBjz02sFzfX6VKzrFhAI4PI/oqzAADXFMzK4L5NVc="; 
+    fetchSubmodules = false;
+  } + "/assets/rofi/rofi-bg.png";
+in
 {
   programs.rofi = {
     enable = true;
