@@ -4,6 +4,7 @@
   imports = [ 
     # use modules from your own flake exports (modules/nixos):
     outputs.nixosModules.sddm-theme
+    outputs.nixosModules.fonts
     
     ./hardware-configuration.nix
 

@@ -26,9 +26,11 @@
     dunst
     feh
     pavucontrol
-    hyprpaper
     tldr
     kdePackages.dolphin
+    hyprpolkitagent
+    hyprpaper
+    python314
   ];
 
 
@@ -45,21 +47,17 @@
     theme.name = "Tokyonight-Dark-BL";
     theme.package = pkgs.tokyo-night-gtk;
    
-    font.name = "JetBrainsMono 10";
+    font.name = "Cantarell";
     font.size = 12;
       
-    iconTheme.name = "Papirus-Dark";
-    iconTheme.package = pkgs.papirus-icon-theme;
-  
-    cursorTheme.name = "Bibata-Modern-Classic";
-    cursorTheme.size = 26;
-    cursorTheme.package = pkgs.bibata-cursors;
+    iconTheme.name = "Tela-circle-dracula";
+    iconTheme.package = pkgs.tela-circle-icon-theme;
   
     gtk3.extraConfig = {
       gtk-button-images = 1;
       gtk-menu-images = 1;
       gtk-enable-event-sounds = 1;
-      gtk-enable-input-feedback-sounds = 1;
+      gtk-enable-input-feedback-sounds = 0;
       gtk-xft-antialias= 1 ;
       gtk-xft-hinting = 1;
       gtk-xft-hintstyle = "hintfull";  
@@ -68,11 +66,6 @@
       gtk-application-prefer-dark-theme=1;
     };
   	
-    gtk3.extraCss = "
-      VteTerminal, vte-terminal {
-        padding: 13px;
-      }	 
-    ";
   };
 
   services.udiskie.enable = true;
