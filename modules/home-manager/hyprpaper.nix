@@ -1,24 +1,29 @@
 { pkgs, ... }:
 
 let
-  wallpaper = pkgs.fetchurl {
-    url = "https://raw.githubusercontent.com/astro81/nix-configs/main/assets/rofi/rofi-bg.jpg";
-    sha256 = "1i18asbh46ggi5lvygv5akwp6l0hggmhv9vbahdq4biyxnkkrdaq";
+  wallpaperPath = pkgs.fetchurl {
+    url = "https://raw.githubusercontent.com/astro81/nix-configs/main/assets/background/guweiz.jpg";
+    sha256 = "1y9ahabwjmcmpphdg2wix25hqlzg5c29fmsl9dss2jqqkw1gdzqs";
   };
+
+  # Hyprpaper expects strings in format: "monitor, /nix/store/..."
+  formattedWallpaper = ", ${toString wallpaperPath}";
 in
 {
   services.hyprpaper = {
     enable = true;
+    package = pkgs.hyprpaper;
 
     settings = {
       ipc = "on";
       splash = false;
       splash_offset = 2.0;
 
-      preload = [ wallpaper ];
-      wallpaper = [ wallpaper ];
+      # preload is just a list of paths
+      preload = [ "${toString wallpaperPath}" ];
+
+      # wallpaper must be in "monitor, path" format
+      wallpaper = [ formattedWallpaper ];
     };
   };
-
-  home.packages = with pkgs; [ hyprpaper ];
 }
