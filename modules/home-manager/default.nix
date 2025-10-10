@@ -5,6 +5,7 @@
   fish      = import ./fish.nix;
   git       = import ./git.nix;
   hypr      = import ./hyprland.nix;
+  hyprpaper = import ./hyprpaper.nix; 
   kitty     = import ./kitty.nix;
   rofi      = import ./rofi.nix;
   starship  = import ./starship.nix;

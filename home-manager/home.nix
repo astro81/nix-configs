@@ -9,6 +9,7 @@
     outputs.homeManagerModules.fish
     outputs.homeManagerModules.git
     outputs.homeManagerModules.hypr
+    outputs.homeManagerModules.hyprpaper
     outputs.homeManagerModules.kitty
     outputs.homeManagerModules.rofi
     outputs.homeManagerModules.starship
@@ -38,7 +39,6 @@
     tldr
     kdePackages.dolphin
     hyprpolkitagent
-    hyprpaper
     python314
   ];
 
