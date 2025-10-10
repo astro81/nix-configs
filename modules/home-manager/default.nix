@@ -4,6 +4,7 @@
   direnv    = import ./direnv.nix;
   fish      = import ./fish.nix;
   git       = import ./git.nix;
+  hypr      = import ./hyprland.nix;
   kitty     = import ./kitty.nix;
   rofi      = import ./rofi.nix;
   starship  = import ./starship.nix;

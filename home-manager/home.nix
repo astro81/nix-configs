@@ -8,6 +8,7 @@
     outputs.homeManagerModules.direnv
     outputs.homeManagerModules.fish
     outputs.homeManagerModules.git
+    outputs.homeManagerModules.hypr
     outputs.homeManagerModules.kitty
     outputs.homeManagerModules.rofi
     outputs.homeManagerModules.starship

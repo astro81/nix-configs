@@ -14,8 +14,8 @@ let
   rofiBg = pkgs.fetchFromGitHub {
     owner = "astro81"; 
     repo = "nix-configs";          
-    rev = "6e2499224b5a6f9eed498fa2492527dda1706cab";                   
-    sha256 = "sha256-gFyBjz02sFzfX6VKzrFhAI4PI/oqzAADXFMzK4L5NVc="; 
+    rev = "bd880d34abc5d4c23eaaa34fa6bfc90f723c1b50";                   
+    sha256 = "sha256-h1zfSutV/jTNrSiVS3UKbKvtUUPZKan0GakQq0sS1MI="; 
     fetchSubmodules = false;
   } + "/assets/rofi/rofi-bg.jpg";
 in
