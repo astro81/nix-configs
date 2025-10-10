@@ -1,14 +1,12 @@
 {
-  imports = [
-    ./bat.nix
-    ./cava.nix
-    ./direnv.nix
-    ./fish.nix
-    ./git.nix
-    ./kitty.nix
-    ./rofi.nix
-    ./starship.nix
-    ./tmux.nix
-  ];
+  bat       = import ./bat.nix;
+  cava      = import ./cava.nix;
+  direnv    = import ./direnv.nix;
+  fish      = import ./fish.nix;
+  git       = import ./git.nix;
+  kitty     = import ./kitty.nix;
+  rofi      = import ./rofi.nix;
+  starship  = import ./starship.nix;
+  tmux      = import ./tmux.nix;
 }
 

@@ -3,7 +3,15 @@
 {
   imports = [ 
     # use modules from your own flake exports (from modules/home-manager):
-    outputs.homeManagerModules
+    outputs.homeManagerModules.bat
+    outputs.homeManagerModules.cava
+    outputs.homeManagerModules.direnv
+    outputs.homeManagerModules.fish
+    outputs.homeManagerModules.git
+    outputs.homeManagerModules.kitty
+    outputs.homeManagerModules.rofi
+    outputs.homeManagerModules.starship
+    outputs.homeManagerModules.tmux
   ];
 
   home.file = {};

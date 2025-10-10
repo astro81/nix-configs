@@ -29,14 +29,12 @@
     homeManagerModules = import ./modules/home-manager;
 
     nixosConfigurations.${hostname} = nixpkgs.lib.nixosSystem {
-      description = "NixOS system configuration for ${hostname}";
       system = system;
       specialArgs = { inherit inputs outputs; };
       modules = [ ./nixos/configuration.nix ];  
     };
 
     homeConfigurations."${username}@${hostname}" = home-manager.lib.homeManagerConfiguration {
-      description = "Home configuration for ${username}@${hostname}";
       pkgs = nixpkgs.legacyPackages.${system};
       extraSpecialArgs = {inherit inputs outputs;};
       modules = [ ./home-manager/home.nix ];

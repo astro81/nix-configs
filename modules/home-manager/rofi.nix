@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ config, pkgs, ... }:
 
 let
   # URL of your Rofi background image
@@ -17,14 +17,14 @@ let
     rev = "6e2499224b5a6f9eed498fa2492527dda1706cab";                   
     sha256 = "sha256-gFyBjz02sFzfX6VKzrFhAI4PI/oqzAADXFMzK4L5NVc="; 
     fetchSubmodules = false;
-  } + "/assets/rofi/rofi-bg.png";
+  } + "/assets/rofi/rofi-bg.jpg";
 in
 {
   programs.rofi = {
     enable = true;
-    package = pkgs.rofi-wayland;
+    package = pkgs.rofi;
     cycle = true;
-    configPath = "$XDG_CONFIG_HOME/rofi/config.rasi";
+    # configPath = "$XDG_CONFIG_HOME/rofi/config.rasi";
     font = "Cantarell 12";
 
     extraConfig = {
