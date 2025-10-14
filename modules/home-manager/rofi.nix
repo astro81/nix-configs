@@ -5,22 +5,12 @@ let
     url = "https://raw.githubusercontent.com/astro81/nix-configs/main/assets/rofi/rofi-bg.jpg";
     sha256 = "1i18asbh46ggi5lvygv5akwp6l0hggmhv9vbahdq4biyxnkkrdaq";
   };
-
-  # Fetch the image from your GitHub repository
-  # rofiBg = pkgs.fetchFromGitHub {
-  #   owner = "astro81"; 
-  #   repo = "nix-configs";          
-  #   rev = "bd880d34abc5d4c23eaaa34fa6bfc90f723c1b50";                   
-  #   sha256 = "sha256-h1zfSutV/jTNrSiVS3UKbKvtUUPZKan0GakQq0sS1MI="; 
-  #   fetchSubmodules = false;
-  # } + "/assets/rofi/rofi-bg.jpg";
 in
 {
   programs.rofi = {
     enable = true;
     package = pkgs.rofi;
     cycle = true;
-    # configPath = "$XDG_CONFIG_HOME/rofi/config.rasi";
     font = "Cantarell 12";
 
     extraConfig = {
@@ -32,8 +22,6 @@ in
       display-run = "";
       display-window = "";
       display-filebrowser = "";
-      #display-emoji = "󰞅";
-      #display-calc = "󰃬";
       drun-display-format = "{name} [<span weight='light' size='small'><i>({generic})</i></span>]";
       window-format = "{w}{t}";
     };
@@ -62,6 +50,7 @@ in
         spacing = mkLiteral "0em"; 
         padding = mkLiteral "0em"; 
         border-color = mkLiteral "@main-br"; 
+        border-radius = mkLiteral "1.5em";
         background-color = mkLiteral "@main-bg"; 
       };
 

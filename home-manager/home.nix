@@ -39,7 +39,10 @@
     tldr
     kdePackages.dolphin
     hyprpolkitagent
-    python314
+    lm_sensors
+    wmctrl
+    eww
+    # pulseaudio
   ];
 
 

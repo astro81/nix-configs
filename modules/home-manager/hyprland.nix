@@ -6,6 +6,7 @@
     settings = {
       ### MONITORS ###
       monitor = [ "eDP-1,1920x1080,0x0,1" ];
+      # monitor = [",preferred,auto,1"];
 
       ### AUTOSTART ###
       exec-once = [
@@ -135,6 +136,10 @@
         "$mainMod, H, [$l|Rofi] keybindings hint, exec, ~/.config/hypr/scripts/keybinds_rofi.py"
         "$mainMod, V, [$l|Rofi] clipboard, exec, pkill -x rofi || $scrPath/cliphist.sh -c"
         "$mainMod, M, [$l|Rofi] exit, exit,"
+
+        # Eww
+        "$mainMod, D, [Open Dashboard], exec, eww open dashboard"
+        "$mainMod Shift, D, [Close Dashboard], exec, eww close dashboard"
 
         # Window Management
         "$mainMod, V, [$wm] Toggle floating, togglefloating,"

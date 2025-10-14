@@ -4,6 +4,8 @@
   #services.asusd.enable = true;
   #programs.rog-control-center.enable = true;
 
+  services.upower.enable = true;
+
   # CPU mode
   powerManagement.enable = true;
   powerManagement.cpuFreqGovernor = "powersave";  # "ondemand", "powersave", "performance"
