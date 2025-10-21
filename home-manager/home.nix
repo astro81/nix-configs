@@ -12,8 +12,12 @@
     outputs.homeManagerModules.hyprpaper
     outputs.homeManagerModules.kitty
     outputs.homeManagerModules.rofi
+    outputs.homeManagerModules.spotify 
     outputs.homeManagerModules.starship
     outputs.homeManagerModules.tmux
+
+    # Or modules exported from other flakes (such as nix-colors):
+    inputs.spicetify-nix.homeManagerModules.default
   ];
 
   home.file = {};
@@ -23,8 +27,7 @@
     EDITOR = "nvim";
     TERMINAL = "kitty";
     XCURSOR_THEME = "Bibata-Modern-Classic";
-  }; 
-
+  };
 
   home.packages = with pkgs; [
     gotop

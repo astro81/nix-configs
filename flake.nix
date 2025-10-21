@@ -8,6 +8,9 @@
     # Home manager
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
+    
+    # Spicetify
+    spicetify-nix.url = "github:Gerg-L/spicetify-nix";
   };
 
   outputs = { self, nixpkgs, home-manager, ... }@inputs: 
@@ -35,7 +38,7 @@
     };
 
     homeConfigurations."${username}@${hostname}" = home-manager.lib.homeManagerConfiguration {
-      pkgs = nixpkgs.legacyPackages.${system};
+      pkgs = pkgs; 
       extraSpecialArgs = {inherit inputs outputs;};
       modules = [ ./home-manager/home.nix ];
     };

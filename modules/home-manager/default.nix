@@ -8,6 +8,7 @@
   hyprpaper = import ./hyprpaper.nix; 
   kitty     = import ./kitty.nix;
   rofi      = import ./rofi.nix;
+  spotify   = import ./spotify.nix;
   starship  = import ./starship.nix;
   tmux      = import ./tmux.nix;
 }
