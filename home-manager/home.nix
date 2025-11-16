@@ -41,11 +41,16 @@
     pavucontrol
     tldr
     kdePackages.dolphin
+    kdePackages.gwenview
+    kdePackages.okular
     hyprpolkitagent
     lm_sensors
     wmctrl
     eww
     # pulseaudio
+    grim 
+    slurp
+    swappy
   ];
 
 

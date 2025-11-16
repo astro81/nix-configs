@@ -140,6 +140,11 @@
         # Eww
         "$mainMod, D, [Open Dashboard], exec, eww open dashboard"
         "$mainMod Shift, D, [Close Dashboard], exec, eww close dashboard"
+        
+        # Screenshot
+        "$mainMod, PRINT, [Take entire desktop Screenshot], exec, grim \"$HOME/Pictures/Screenshots/screen_$(date +%Y%m%d_%H%M%S).png\""
+        "$mainMod Shift, PRINT, [Take selected area Screenshot], exec, grim -g $(slurp) \"$HOME/Pictures/Screenshots/screen_$(date +%Y%m%d_%H%M%S).png\""
+        "$mainMod CONTROL, PRINT, [Take selected area Screenshot with gui], exec, grim -g $(slurp) \"$HOME/Pictures/Screenshots/screen_$(date +%Y%m%d_%H%M%S).png\" - | swappy -f - "
 
         # Window Management
         "$mainMod, V, [$wm] Toggle floating, togglefloating,"

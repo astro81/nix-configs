@@ -7,7 +7,7 @@
     outputs.nixosModules.boot-grub
     outputs.nixosModules.fonts
     outputs.nixosModules.sddm-theme
-    
+
     ./hardware-configuration.nix
 
   ];
@@ -83,9 +83,21 @@
     home-manager
   ];
 
+  environment.plasma6.excludePackages = with pkgs; [
+    plasma-browser-integration
+    kwallet
+    kwallet-pam
+    kwalletmanager
+  ];
+
   # Docker rootless
   virtualisation.docker.rootless.enable = true;
   virtualisation.docker.rootless.setSocketVariable = true;
+  virtualisation.docker.enable = true;
+  virtualisation.docker.daemon.settings = {
+    dns = [ "1.1.1.1" "8.8.8.8" ];
+  };
+
 
 
   system.stateVersion = "25.05"; 
