@@ -81,6 +81,7 @@
     kitty
     nix-prefetch-git
     home-manager
+    dotnet-sdk_10
   ];
 
   environment.plasma6.excludePackages = with pkgs; [

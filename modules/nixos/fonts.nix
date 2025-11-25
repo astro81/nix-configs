@@ -3,14 +3,17 @@
   fonts = {
     fontDir.enable = true;
     packages = with pkgs; [
-      nerd-fonts.jetbrains-mono
       cantarell-fonts
+      fira-code-symbols
+      nerd-fonts.fira-code
     ];
     fontconfig = {
       enable = true;
       antialias = true;
       defaultFonts = {
-        monospace = [ "JetBrainsMono" ];
+        monospace = [ "Fira Code" ];    # terminals, editors, code blocks
+        sansSerif = [ "Inter" ];        # websites, desktop UI, app menus 
+        serif = [ "Noto Serif" ];       # pdf, word processors
       };
     };  
   };  

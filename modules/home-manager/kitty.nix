@@ -5,7 +5,7 @@
     themeFile = "tokyo_night_night";
 
     font.size = 12;
-    font.name = "JetbrainsMono Nerd Font";
+    font.name = "FiraCode Nerd Font Mono";
 
     settings = {
       bold_font = "auto";
@@ -14,7 +14,7 @@
 
       window_padding_width = 12;
 
-      background_opacity = 0.9;
+      background_opacity = 1;
 
       cursor_shape = "beam";
       cursor_shape_unfocused = "hollow";
