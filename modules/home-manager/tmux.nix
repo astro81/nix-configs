@@ -4,7 +4,7 @@ programs.tmux = {
   enable = true;
 
   # Prefix
-  prefix = "C-a";
+  prefix = "C-b";
 
   # Mouse support
   mouse = true;

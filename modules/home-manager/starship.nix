@@ -44,7 +44,7 @@
       git_status.untracked  = "…\${count} ";
       git_status.deleted    = "✖\${count} ";
       git_status.renamed    = "➜\${count} ";
-      git_status.format     = "([$all_status]($style)) ";
+      git_status.format     = "([$all_status]($style))";
     };
   };
 }

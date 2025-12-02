@@ -51,7 +51,6 @@
     grim 
     slurp
     swappy
-    android-studio-full
     unzip
     zip
     rar
