@@ -58,6 +58,7 @@
     shellAliases = {
       "grep"    = "grep --color=auto --exclude-dir={.git,.hg,.svn}";
       "ping"    = "ping -c 5";
+      "zstat" = "sudo grep -r . /sys/kernel/debug/zswap/ | grep -v 'reject\\|fail'";
     };
     
     functions = {

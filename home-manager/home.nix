@@ -8,11 +8,11 @@
     outputs.homeManagerModules.direnv
     outputs.homeManagerModules.fish
     outputs.homeManagerModules.git
-    outputs.homeManagerModules.hypr
-    outputs.homeManagerModules.hyprpaper
     outputs.homeManagerModules.kitty
-    outputs.homeManagerModules.rofi
-    outputs.homeManagerModules.spotify 
+    # outputs.homeManagerModules.hypr
+    # outputs.homeManagerModules.hyprpaper
+    # outputs.homeManagerModules.rofi
+    # outputs.homeManagerModules.spotify 
     outputs.homeManagerModules.starship
     outputs.homeManagerModules.tmux
 
@@ -31,7 +31,7 @@
 
   home.packages = with pkgs; [
     gotop
-    brightnessctl
+    # brightnessctl
     brave
     htop
     tree
@@ -40,13 +40,13 @@
     feh
     pavucontrol
     tldr
-    kdePackages.dolphin
-    kdePackages.gwenview
-    kdePackages.okular
-    hyprpolkitagent
-    lm_sensors
-    wmctrl
-    eww
+    # kdePackages.dolphin
+    # kdePackages.gwenview
+    # kdePackages.okular
+    # hyprpolkitagent
+    # lm_sensors
+    # wmctrl
+    # eww
     # pulseaudio
     grim 
     slurp
@@ -91,11 +91,11 @@
   	
   };
 
-  services.udiskie.enable = true;
-  services.udiskie.automount = true;
-  services.udiskie.notify = true;
-  services.udiskie.tray = "auto";
+  # services.udiskie.enable = true;
+  # services.udiskie.automount = true;
+  # services.udiskie.notify = true;
+  # services.udiskie.tray = "auto";
 
-  home.stateVersion = "24.11"; 
+  home.stateVersion = "25.11"; 
   programs.home-manager.enable = true;
 }

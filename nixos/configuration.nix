@@ -29,20 +29,22 @@
   services.xserver.enable = true;
   services.xserver.xkb.layout = "us";
 
+  services.desktopManager.plasma6.enable = true;
+
 
   # Enable Hyprland
-  programs.hyprland.enable = true;
- 
+  # programs.hyprland.enable = true;
+
   # Udisks
-  services.udisks2.enable = true;
-  services.udisks2.mountOnMedia = true;
-  services.udisks2.settings = {
-    "udisks2.conf" = {
-      defaults.encryption = "luks2";
-      udisks2.modules = [ "*" ];
-      udisks2.modules_load_preferences = "ondemand";
-    };
-  };
+  # services.udisks2.enable = true;
+  # services.udisks2.mountOnMedia = true;
+  # services.udisks2.settings = {
+  # "udisks2.conf" = {
+  #     defaults.encryption = "luks2";
+  #     udisks2.modules = [ "*" ];
+  #     udisks2.modules_load_preferences = "ondemand";
+  #   };
+  # };
 
   # Audio Service.
   security.rtkit.enable = true;
@@ -71,7 +73,7 @@
   programs.fish.enable = true;
 
   # Polkit authentication	
-  security.polkit.enable = true;
+  # security.polkit.enable = true;
 
   # System packages
   environment.systemPackages = with pkgs; [
@@ -85,10 +87,10 @@
   ];
 
   environment.plasma6.excludePackages = with pkgs; [
-    plasma-browser-integration
-    kwallet
-    kwallet-pam
-    kwalletmanager
+    kdePackages.plasma-browser-integration
+    kdePackages.kwallet
+    kdePackages.kwallet-pam
+    kdePackages.kwalletmanager
   ];
 
   # Docker rootless
@@ -100,8 +102,7 @@
   };
 
 
-
-  system.stateVersion = "25.05"; 
+  system.stateVersion = "25.11"; 
 
 }
 

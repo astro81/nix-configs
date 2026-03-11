@@ -27,4 +27,23 @@
   systemd.services.asus-touchpad-numpad.serviceConfig.RestartSec = "1s";
   systemd.services.asus-touchpad-numpad.serviceConfig.Restart = "on-failure";
   systemd.services.asus-touchpad-numpad.wantedBy = [ "multi-user.target" ];
+
+  swapDevices = [{
+    device = "/var/lib/swapfile";
+    size = 8 * 1024;                  # 8 GB
+  }];
+
+  boot.kernelParams = [ 
+    "zswap.enabled=1" 
+    "zswap.compressor=zstd"       
+    "zswap.zpool=zsmalloc"       
+    "zswap.max_pool_percent=25"  
+  ];
+
+  # Lower swappiness to keep apps in RAM longer before swapping
+  boot.kernel.sysctl = {
+    "vm.swappiness" = 10; 
+    "vm.vfs_cache_pressure" = 50; # keep file metadata in RAM longer
+  };
+
 }
