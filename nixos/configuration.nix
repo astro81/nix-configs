@@ -1,4 +1,4 @@
-{ inputs, outputs, config, lib, pkgs, ... }:
+{ inputs, outputs, config, lib, pkgs, username, ... }:
 
 {
   imports = [ 
@@ -7,6 +7,7 @@
     outputs.nixosModules.boot-grub
     outputs.nixosModules.fonts
     outputs.nixosModules.sddm-theme
+    outputs.nixosModules.container
 
     ./hardware-configuration.nix
 
@@ -61,12 +62,11 @@
   services.gvfs.enable = true;
 
   # Define a user account. 
-  users.users.astro = {
+  users.users.${username} = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "networkmanager" "docker" ]; 
+    extraGroups = [ "wheel" "networkmanager" ]; 
     packages = with pkgs; [];
     shell = pkgs.fish;
-    useDefaultShell = true;
   };
  
   # Fish shell
@@ -84,6 +84,7 @@
     nix-prefetch-git
     home-manager
     dotnet-sdk_10
+    python315
   ];
 
   environment.plasma6.excludePackages = with pkgs; [
@@ -92,15 +93,6 @@
     kdePackages.kwallet-pam
     kdePackages.kwalletmanager
   ];
-
-  # Docker rootless
-  virtualisation.docker.rootless.enable = true;
-  virtualisation.docker.rootless.setSocketVariable = true;
-  virtualisation.docker.enable = true;
-  virtualisation.docker.daemon.settings = {
-    dns = [ "1.1.1.1" "8.8.8.8" ];
-  };
-
 
   system.stateVersion = "25.11"; 
 

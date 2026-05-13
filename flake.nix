@@ -33,7 +33,7 @@
 
     nixosConfigurations.${hostname} = nixpkgs.lib.nixosSystem {
       system = system;
-      specialArgs = { inherit inputs outputs; };
+      specialArgs = { inherit inputs outputs username; };
       modules = [ ./nixos/configuration.nix ];  
     };
 

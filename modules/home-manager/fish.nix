@@ -6,7 +6,6 @@
     shellInit = ''
       set -q PAGER; or set -Ux PAGER less
       set -q EDITOR; or set -Ux EDITOR vim
-      
       set fish_greeting
       
       starship init fish | source
